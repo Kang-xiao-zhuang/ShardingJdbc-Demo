@@ -59,7 +59,7 @@ public class ShardingjdbcdemoApplicationTests {
     public void findUserDb() {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         //设置userid值
-        wrapper.eq("user_id", 901201511999078401L);
+        wrapper.eq("user_id", 902147286153297921L);
         User user = userMapper.selectOne(wrapper);
         System.out.println(user);
     }
@@ -69,7 +69,7 @@ public class ShardingjdbcdemoApplicationTests {
     //添加操作
     @Test
     public void addCourseDb() {
-        for (int i = 50; i > 0; i--) {
+        for (int i = 10; i > 0; i--) {
             Course course = new Course();
             course.setCname("javademo1");
             //分库根据user_id
