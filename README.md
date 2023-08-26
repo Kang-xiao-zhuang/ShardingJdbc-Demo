@@ -576,6 +576,24 @@ public void deleteDict(){
 
 Sharding-JDBC通过sql语句语义分析，当sql语句有insert、update、delete时，Sharding-JDBC就把这次操作在主数据库上执行；当sql语句有select时，就会把这次操作在从数据库上执行，从而实现读写分离过程。但Sharding-JDBC并不会做数据同步，数据同步是配置MySQL后由MySQL自己完成的。
 
+参考：https://blog.csdn.net/qq_36903261/article/details/108457759
+
+镜像更换：
+
+```shell
+$ mv /etc/apt/sources.list /etc/apt/sources.list.bak
+ 
+$ echo  "deb http://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free" >/etc/apt/sources.list
+$ echo  "deb http://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free" >>/etc/apt/sources.list
+$ echo  "deb http://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free" >>/etc/apt/sources.list
+$ echo  "deb http://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free" >>/etc/apt/sources.list
+
+
+$ apt-get update
+
+$ apt-get install -y vim
+```
+
 ### MySQL 一主一从读写分离配置
 
 因为记录的文件名以及位点每次重启或刷新都会改变，所以以下命令放在这里，方便查看。
